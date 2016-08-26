@@ -27,6 +27,7 @@ $em->getConnection()->getDatabasePlatform()->registerDoctrineTypeMapping('enum',
 $driver = new \Doctrine\ORM\Mapping\Driver\DatabaseDriver(
     $em->getConnection()->getSchemaManager()
 );
+$driver->setNamespace('App\Model');
 $em->getConfiguration()->setMetadataDriverImpl($driver);
 $cmf = new \Doctrine\ORM\Tools\DisconnectedClassMetadataFactory($em);
 $cmf->setEntityManager($em);
